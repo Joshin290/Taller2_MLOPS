@@ -57,12 +57,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
-@app.get("/", tags=["General"])
-def root():
-    return {"message": "Servicio de Inferencia de Modelos MLOps activo"}
-
-
 @app.get("/model", tags=["Modelo"])
 def get_active_model():
     """Retorna la información del modelo que está activo actualmente."""
