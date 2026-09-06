@@ -1,0 +1,18 @@
+# Imagen base con Python y bibliotecas de ML
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Instalar uv dentro del contenedor para garantizar ejecución independiente del SO host
+RUN pip install uv 
+
+# Copiar manifiestos de dependencias
+COPY pyproject.toml uv.lock /app/
+
+# Sincronizar dependencias usando uv dentro de la imagen
+RUN uv sync --frozen --no-install-project --python 3.11
+
+EXPOSE 8025
+
+# Comando por defecto
+CMD ["uv", "run", "jupyter", "lab", "--ip=0.0.0.0", "--port=8025", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
