@@ -8,4 +8,4 @@
 * **Joshua Alexander Valero Lozano**
 
 ---
-Nota: Visualizar el archivo "README" al interior de la carpeta poryecto para mayor información.
+Nota: Visualizar el archivo "README" al interior de la carpeta proyecto para mayor información.
